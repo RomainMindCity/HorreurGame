@@ -7,7 +7,7 @@ public class FlashLight : MonoBehaviour
     //Faire une coroutine pour faire clignoter la lumiere de la lampe torche
     public Light flashLight;
     public float minIntensity;
-    public float maxIntensity;
+    public float maxIntensity;    
 
     [SerializeField] private float _batteryLife = 100f;
 
@@ -22,8 +22,9 @@ public class FlashLight : MonoBehaviour
         while (true)
         {
             flashLight.intensity = Random.Range(minIntensity, maxIntensity);
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(0.11f);
             DecreaseBattery();
+
 
             if (_batteryLife <= 0)
             {
