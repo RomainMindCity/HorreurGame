@@ -6,8 +6,9 @@ public class FlashLight : MonoBehaviour
 {
     //Faire une coroutine pour faire clignoter la lumiere de la lampe torche
     public Light flashLight;
-    public float minIntensity;
-    public float maxIntensity;    
+    [SerializeField] float minIntensity;
+    [SerializeField] float maxIntensity;
+    [SerializeField] int range;
 
     [SerializeField] private float _batteryLife = 100f;
 
@@ -15,6 +16,7 @@ public class FlashLight : MonoBehaviour
     {
         StartCoroutine("LetTheLightFlash");
         print("Start");
+        flashLight.range = range;
     }
 
     IEnumerator LetTheLightFlash()
