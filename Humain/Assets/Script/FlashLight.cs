@@ -47,4 +47,10 @@ public class FlashLight : MonoBehaviour
     {
         _batteryLife = 100f;
     }
+
+    //Faire une fonction pour renvoyer la valeur de la batterie
+    public float GetBatteryLife()
+    {
+        return _batteryLife;
+    }
 }
