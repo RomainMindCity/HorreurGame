@@ -53,15 +53,17 @@ public class SoundManager : MonoBehaviour
         s.source.Play();
     }
 
+    //créer une fonction pour stopper la musique
     public void Stop(string name)
     {
-
-        Sound s = Array.Find(sounds, (sound) => sound.name == name);
+        Sound s = Array.Find(sounds, sound => sound.name == name);
         if (s == null)
         {
             Debug.LogWarning("Sound : " + name + " not found mate!");
             return;
         }
+
         s.source.Stop();
     }
+
 }
