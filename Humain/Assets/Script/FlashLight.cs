@@ -11,12 +11,15 @@ public class FlashLight : MonoBehaviour
     [SerializeField] int range;
 
     [SerializeField] private float _batteryLife = 100f;
+    
 
     void Start()
     {
         StartCoroutine("LetTheLightFlash");
         print("Start");
         flashLight.range = range;
+        FindObjectOfType<SoundManager>().Play("FlashLight");
+
     }
 
     IEnumerator LetTheLightFlash()
@@ -26,6 +29,7 @@ public class FlashLight : MonoBehaviour
             flashLight.intensity = Random.Range(minIntensity, maxIntensity);
             yield return new WaitForSeconds(0.11f);
             DecreaseBattery();
+
 
 
             if (_batteryLife <= 0)

@@ -40,6 +40,8 @@ public class PlayerMove : MonoBehaviour
         rb.freezeRotation = true;
 
         readyToJump = true;
+        FindObjectOfType<SoundManager>().Play("Breath");
+        
     }
 
     private void Update()
