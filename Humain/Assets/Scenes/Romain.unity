@@ -394,6 +394,13 @@ MonoBehaviour:
     duration: 0
     loop: 1
     source: {fileID: 0}
+  - name: Floor_Wood
+    clip: {fileID: 8300000, guid: 1a326c65d524d5246ada6d4f2f949e8c, type: 3}
+    volume: 1
+    pitch: 1
+    duration: 0
+    loop: 0
+    source: {fileID: 0}
 --- !u!4 &635972710
 Transform:
   m_ObjectHideFlags: 0

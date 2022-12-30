@@ -15,11 +15,29 @@ public class FlashLight : MonoBehaviour
 
     void Start()
     {
-        StartCoroutine("LetTheLightFlash");
+        //StartCoroutine("LetTheLightFlash");
         print("Start");
         flashLight.range = range;
         FindObjectOfType<SoundManager>().Play("FlashLight");
 
+    }
+
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            flashLight.enabled = !flashLight.enabled;
+            if (flashLight.enabled)
+            {
+                StartCoroutine("LetTheLightFlash");
+                FindObjectOfType<SoundManager>().Play("FlashLight");
+            }
+            else
+            {
+                StopCoroutine("LetTheLightFlash");
+                FindObjectOfType<SoundManager>().Stop("FlashLight");
+            }
+        }
     }
 
     IEnumerator LetTheLightFlash()
