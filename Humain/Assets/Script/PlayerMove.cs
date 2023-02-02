@@ -6,6 +6,7 @@ public class PlayerMove : MonoBehaviour
 {
     [Header("Movement")]
     public float moveSpeed;
+    public bool isMoving;
 
     public float groundDrag;
 
@@ -40,7 +41,7 @@ public class PlayerMove : MonoBehaviour
         rb.freezeRotation = true;
 
         readyToJump = true;
-        FindObjectOfType<SoundManager>().Play("Breath");
+        //FindObjectOfType<SoundManager>().Play("Breath");
         
     }
 
@@ -54,14 +55,35 @@ public class PlayerMove : MonoBehaviour
 
         // handle drag
         if (grounded)
+        {
             rb.drag = groundDrag;
+
+        }
         else
-            rb.drag = 0;
+        {
+            rb.drag = 0f;
+        }
+        if (moveDirection !=  new Vector3(0,0,0))
+         {
+            Debug.Log("Hello there");
+            FindObjectOfType<SoundManager>().Play("Footstep");
+        }
+        else if (moveDirection == new Vector3(0,0,0))
+        {
+            Debug.Log("Test");
+            FindObjectOfType<SoundManager>().Stop("Footstep");
+        }
+
+
+
+
     }
 
     private void FixedUpdate()
     {
         MovePlayer();
+
+
     }
 
     private void MyInput()
