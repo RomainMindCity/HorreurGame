@@ -42,7 +42,9 @@ public class PlayerMove : MonoBehaviour
 
         readyToJump = true;
         //FindObjectOfType<SoundManager>().Play("Breath");
+        FindObjectOfType<SoundManager>().Play("Footstep");
         
+
     }
 
     private void Update()
@@ -71,7 +73,7 @@ public class PlayerMove : MonoBehaviour
         else if (moveDirection == new Vector3(0,0,0))
         {
             Debug.Log("Test");
-            FindObjectOfType<SoundManager>().Stop("Footstep");
+            //FindObjectOfType<SoundManager>().Stop("Footstep");
         }
 
 

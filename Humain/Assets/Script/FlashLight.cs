@@ -18,7 +18,7 @@ public class FlashLight : MonoBehaviour
         //StartCoroutine("LetTheLightFlash");
         print("Start");
         flashLight.range = range;
-        FindObjectOfType<SoundManager>().Play("FlashLight");
+        //FindObjectOfType<SoundManager>().Play("FlashLight");
 
     }
 
